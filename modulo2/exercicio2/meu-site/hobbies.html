@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site - Hobbies</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #121214;
+            --bg-card: rgba(32, 32, 36, 0.7);
+            --text-main: #e1e1e6;
+            --text-secondary: #a8a8b3;
+            --accent: #8257e5;
+            --accent-hover: #996dff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background: var(--bg-card);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 0.8s ease;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            color: #ffffff;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        nav a:hover,
+        nav a.active {
+            background: var(--accent);
+            color: #ffffff;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            align-items: center;
+        }
+
+        section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #ffffff;
+            border-left: 4px solid var(--accent);
+            padding-left: 10px;
+            width: 100%;
+        }
+
+        .hobbies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            width: 100%;
+        }
+
+        .hobby-card {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .hobby-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .hobby-card h3 {
+            color: var(--accent-hover);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .hobby-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            padding-top: 20px;
+            border-top: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: var(--accent-hover);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- HEADER -->
+        <header>
+            <h1>Meus Hobbies</h1>
+            <nav>
+                <ul>
+                    <li><a href="./index.html">Sobre Mim</a></li>
+                    <li><a href="./hobbies.html" class="active">Meus Hobbies</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- MAIN -->
+        <main>
+            <section style="width: 100%;">
+                <h2>O que eu gosto de fazer</h2>
+
+                <div class="hobbies-grid">
+                    <div class="hobby-card">
+                        <h3>Jogar Video Game</h3>
+                        <p>Adoro explorar mundos virtuais e jogos de ação/RPGs incríveis do momento.</p>
+                    </div>
+                    <div class="hobby-card">
+                        <h3>Ler Artigos Tech</h3>
+                        <p>Manter a cabeça mergulhada em novos frameworks, IA e arquiteturas fantásticas!</p>
+                    </div>
+                    <div class="hobby-card">
+                        <h3>Programar</h3>
+                        <p>Meu hobby é praticamente a minha paixão. Criar códigos de alta qualidade nas horas vagas.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- FOOTER -->
+        <footer>
+            <p>Entre em contato: <a href="mailto:pedroaugustooamg05@gmail.com">pedroaugustooamg05@gmail.com</a></p>
+        </footer>
+    </div>
+
+</body>
+
+</html>

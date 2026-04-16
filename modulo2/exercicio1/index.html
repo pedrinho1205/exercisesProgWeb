@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - Pedro</title>
+    <!-- Fontes do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Reset básico e configurações de box-model */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1e1e2f 0%, #151522 100%);
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Container principal estilo glassmorphism */
+        .glass-container {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        header {
+            margin-bottom: 24px;
+        }
+
+        /* Estilo dinâmico para o Título */
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, #00d2ff 0%, #3a7bd5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        /* Parágrafo de descrição */
+        main p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #d1d1e0;
+        }
+
+        /* Seção de Listas */
+        .hobbies-section {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            padding: 20px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .hobbies-section:hover {
+            transform: translateY(-5px);
+            border-color: rgba(58, 123, 213, 0.5);
+        }
+
+        .hobbies-section h2 {
+            font-size: 1.2rem;
+            color: #3a7bd5;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        /* Estilizando a lista (ul) */
+        ul {
+            list-style: none;
+            text-align: left;
+        }
+
+        ul li {
+            font-size: 1.05rem;
+            padding: 8px 0;
+            color: #e6e6e6;
+            position: relative;
+            padding-left: 28px;
+        }
+
+        /* Marcador customizado para a lista */
+        ul li::before {
+            content: '🚀';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.9rem;
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #888899;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        /* Animação suave na entrada da página */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="glass-container">
+        <!-- Requisito 1: Um header com h1 e nome -->
+        <header>
+            <h1>Pedro</h1>
+        </header>
+
+        <!-- Requisito 2: Um main com um parágrafo -->
+        <!-- Requisito 3: Uma lista ul com 3 hobbies -->
+        <main>
+            <p>
+                Desenvolvedor em formação, sempre buscando desvendar o mundo do código e criar interfaces que se comuniquem com o usuário final de maneira clara e bonita. 
+            </p>
+            
+            <div class="hobbies-section">
+                <h2>Meus Hobbies</h2>
+                <ul>
+                    <li>Codificar projetos pessoais</li>
+                    <li>Jogar videogames modernos e retrô</li>
+                    <li>Explorar novas tecnologias e designs</li>
+                </ul>
+            </div>
+        </main>
+
+        <!-- Requisito 4: Um footer com texto FATEC 2026 -->
+        <footer>
+            FATEC 2026
+        </footer>
+    </div>
+
+</body>
+</html>
