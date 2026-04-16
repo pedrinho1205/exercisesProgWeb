@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Especialista 2026</title>
+
+    <style>
+        /* =========================================
+           RESET E ACESSIBILIDADE
+        ========================================= */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Imagens fluidas (Nunca transbordam a tela) */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Acessibilidade: Desliga animações para quem tem sensibilidade ao movimento */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+
+        /* Animação de entrada (Fade-in) */
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            /* Aplica a animação no carregamento da página */
+            animation: fade-in 1s ease-out;
+            min-height: 100vh;
+            /* Ocupa sempre 100% da tela */
+
+            /* LAYOUT GRID PRINCIPAL (Mobile-first) */
+            display: grid;
+            grid-template-areas:
+                "header"
+                "main"
+                "footer";
+            grid-template-columns: 1fr;
+            grid-template-rows: auto 1fr auto;
+        }
+
+        /* =========================================
+           COMPONENTES DO LAYOUT
+        ========================================= */
+
+        /* HEADER (Navbar com Flexbox space-between) */
+        header {
+            grid-area: header;
+            background-color: #2c3e50;
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Navbar Links ocultos no mobile */
+        nav {
+            display: none;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            transition: all 0.3s ease;
+            /* Transição nos links */
+        }
+
+        nav a:hover {
+            color: #3498db;
+        }
+
+        /* SIDEBAR (Escondida no mobile, mostrada no Desktop) */
+        aside {
+            grid-area: sidebar;
+            background-color: #ecf0f1;
+            padding: 20px;
+            display: none;
+        }
+
+        /* MAIN CONTENT */
+        main {
+            grid-area: main;
+            padding: 20px;
+        }
+
+        /* =========================================
+           SEÇÕES INTERNAS (HERO, FLEX CARDS E GRID)
+        ========================================= */
+
+        /* HERO SECTION (Centralização absoluta com Flexbox) */
+        .hero {
+            background: linear-gradient(135deg, #3498db, #8e44ad);
+            color: white;
+            height: 250px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: center;
+            /* Centraliza Horizontalmente */
+            align-items: center;
+            /* Centraliza Verticalmente */
+            text-align: center;
+        }
+
+        /* Uso do clamp() para fonte responsiva */
+        .hero h1 {
+            font-size: clamp(1.8rem, 5vw, 3rem);
+        }
+
+        /* SEÇÃO FLEXBOX (Cards com wrap e gap) */
+        .flex-section h2 {
+            margin-bottom: 15px;
+        }
+
+        .flex-cards {
+            display: flex;
+            flex-wrap: wrap;
+            /* Permite quebrar linha */
+            gap: 20px;
+            /* Espaço entre os cards */
+            margin-bottom: 40px;
+        }
+
+        /* GALERIA GRID (auto-fit e place-items) */
+        .grid-gallery {
+            display: grid;
+            /* Cria colunas automáticas que não ficam menores que 200px */
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        /* ESTILIZAÇÃO DOS CARDS E EFEITO HOVER */
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            display: grid;
+            place-items: center;
+            /* Centraliza o conteúdo dentro do card */
+            text-align: center;
+            transition: all 0.3s ease;
+            /* Transição suave */
+            /* Regra mobile: 1 coluna (100% da largura) no Flexbox */
+            width: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            /* Sobe 4 pixels */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            /* Adiciona sombra */
+        }
+
+        /* BOTÃO E EFEITO ACTIVE */
+        .btn {
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-top: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn:active {
+            transform: scale(0.95);
+            /* Efeito de encolher ao clicar */
+        }
+
+        /* FOOTER */
+        footer {
+            grid-area: footer;
+            background-color: #2c3e50;
+            color: #bdc3c7;
+            text-align: center;
+            padding: 20px;
+            /* Caso não usemos Grid, o Flexbox faria assim:
+               display: flex; flex-direction: column; */
+        }
+
+        /* =========================================
+           MEDIA QUERIES (A Mágica da Responsividade)
+        ========================================= */
+
+        /* TABLET (A partir de 768px) */
+        @media (min-width: 768px) {
+            nav {
+                display: block;
+            }
+
+            /* Mostra os links da Navbar */
+
+            /* Cards Flex em 2 colunas */
+            .card.flex-item {
+                width: calc(50% - 10px);
+                /* 50% menos metade do gap */
+            }
+        }
+
+        /* DESKTOP (A partir de 1024px) */
+        @media (min-width: 1024px) {
+
+            /* Transforma o layout para incluir a Sidebar fixada em 250px */
+            body {
+                grid-template-areas:
+                    "header header"
+                    "sidebar main"
+                    "footer footer";
+                grid-template-columns: 250px 1fr;
+            }
+
+            aside {
+                display: block;
+            }
+
+            /* Mostra a Sidebar */
+
+            /* Cards Flex em 3 colunas */
+            .card.flex-item {
+                width: calc(33.333% - 14px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h2>MeuLogo</h2>
+        <nav>
+            <a href="#">Início</a>
+            <a href="#">Projetos</a>
+            <a href="#">Contato</a>
+        </nav>
+    </header>
+
+    <aside>
+        <h3>Menu</h3>
+        <p>Dashboard</p>
+        <p>Configurações</p>
+    </aside>
+
+    <main>
+        <section class="hero">
+            <h1>Bem-vindo ao Futuro</h1>
+        </section>
+
+        <section class="flex-section">
+            <h2>Cards com Flexbox</h2>
+            <div class="flex-cards">
+                <div class="card flex-item">
+                    <h3>Card 1</h3><button class="btn">Enviar</button>
+                </div>
+                <div class="card flex-item">
+                    <h3>Card 2</h3><button class="btn">Enviar</button>
+                </div>
+                <div class="card flex-item">
+                    <h3>Card 3</h3><button class="btn">Enviar</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="grid-section">
+            <h2>Galeria com CSS Grid Automático</h2>
+            <div class="grid-gallery">
+                <div class="card">Item A</div>
+                <div class="card">Item B</div>
+                <div class="card">Item C</div>
+                <div class="card">Item D</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>FATEC 2026 - Desenvolvido com dedicação</p>
+    </footer>
+
+</body>
+
+</html>
