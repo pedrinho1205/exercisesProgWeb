@@ -25,19 +25,4 @@ portfolio/
 - **Animações e Efeitos:** Incorporação de transições suaves (`0.3s ease`), *Glassmorphism* no navbar e animação `fadeIn` via Keyframes para recebimento de alto impacto do usuário na primeira vista (*Hero Section*).
 - **Modelagem Responsiva:** Construído com abordagem *Mobile-First*, subindo resouluções gradativamente utilizando Flexbox na Navbar e Contact form, e CSS Grid nos cards de projeto para adaptabilidade automática.
 
-## Checklist de Requisitos Atendidos:
-- [x] Estrutura organizada e CSS isolado.
-- [x] Tags semânticas configuradas no HTML.
-- [x] Viewport configurada corretamente.
-- [x] Contato formulário com labels apropriadas.
-- [x] Atribuições de `alt text` em todas as imagens (aqui geradas visões por IA).
-- [x] Âncoras testadas no navbar.
-- [x] Variáveis globais CSS e Reset unificado com `box-sizing: border-box`.
-- [x] Estilização utilizando Flexbox e CSS Grid combinados.
-- [x] Mobile-first implementado (media queries testados).
-- [x] Elementos de UI extras: Efeitos hover, glassmorphism e sombras adaptativas do Dark Mode.
-- [x] `max-width: 100%` nas imagens para total responsividade.
 
-## Instruções de uso local
-1. Navegue até a pasta local do projeto.
-2. Não são necessários comandos `npm`. Basta abrir o arquivo `index.html` em qualquer navegador atualizado ou utilizar a extensão *Live Server* do seu VSCode!
