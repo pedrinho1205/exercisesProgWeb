@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio | Desenvolvedor Web</title>
+    <!-- Link para o CSS externo -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Cabeçalho de Navegação Dinâmico -->
+    <header class="navbar">
+        <div class="logo">Meu<span>Site</span>.</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section com Imagem e Call to Action -->
+        <section id="home" class="hero">
+            <img src="img/foto-perfil.jpg" alt="Foto de perfil de um jovem desenvolvedor em um ambiente iluminado" class="hero-img">
+            <h1>Criando experiências <span>Digitais Incríveis</span></h1>
+            <p>Olá, sou um Desenvolvedor Web especializado em criar interfaces responsivas, vibrantes e premium para o mundo moderno.</p>
+            <a href="#projetos" class="btn">Ver Meus Trabalhos</a>
+        </section>
+
+        <!-- Seção Sobre Mim -->
+        <section id="sobre" class="sobre">
+            <h2 class="section-title">Sobre Mim</h2>
+            <div class="sobre-content">
+                <p>Sou apaixonado por tecnologia e design avançado. Com foco em especialização no ecossistema Front-End moderno, adoro transformar problemas complexos em layouts visuais incrivelmente elegantes, fáceis de usar e fluidos em acessibilidade.</p>
+            </div>
+        </section>
+
+        <!-- Seção de Projetos via CSS Grid -->
+        <section id="projetos" class="projetos">
+            <h2 class="section-title">Projetos Recentes</h2>
+            <div class="projetos-grid">
+                <!-- Card Projeto 1 -->
+                <article class="card">
+                    <div class="card-img-wrapper">
+                        <img src="img/projeto-1.jpg" alt="Mockup de e-commerce moderno com tons neon e esquema dark mode">
+                    </div>
+                    <div class="card-content">
+                        <h3>E-Commerce NeonShop</h3>
+                        <p>Uma plataforma de compras fluida e elegante, construída com foco em conversão e usabilidade orientada a mobile-first.</p>
+                    </div>
+                </article>
+
+                <!-- Card Projeto 2 -->
+                <article class="card">
+                    <div class="card-img-wrapper">
+                        <img src="img/projeto-2.jpg" alt="Dashboard rico em gráficos com tipografia limpa em fundo escuro">
+                    </div>
+                    <div class="card-content">
+                        <h3>Dashboard Analytics</h3>
+                        <p>Interface rica para visualização de dados em tempo real. Modo escuro dinâmico, layouts interativos e gráficos envolventes.</p>
+                    </div>
+                </article>
+
+                <!-- Card Projeto 3 -->
+                <article class="card">
+                    <div class="card-img-wrapper">
+                        <img src="img/projeto-3.jpg" alt="Landing page para aplicativo visualizada em interface mobile">
+                    </div>
+                    <div class="card-content">
+                        <h3>App Landing Page</h3>
+                        <p>Página de lançamento de funil para um aplicativo visual nativo. Utilização massiva de glassmorphism e animações 60fps.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Seção de Habilidades Flexbox -->
+        <section id="habilidades" class="habilidades">
+            <h2 class="section-title">Minhas Habilidades</h2>
+            <div class="skills-wrapper">
+                <div class="skill-tag">HTML5 Semântico</div>
+                <div class="skill-tag">CSS3 Avançado</div>
+                <div class="skill-tag">Variáveis CSS</div>
+                <div class="skill-tag">CSS Grid & Flexbox</div>
+                <div class="skill-tag">JavaScript Moderno</div>
+                <div class="skill-tag">Design Responsivo</div>
+                <div class="skill-tag">UI/UX Premium</div>
+            </div>
+        </section>
+
+        <!-- Seção Formulário de Contatos Acessível -->
+        <section id="contato" class="contato">
+            <h2 class="section-title">Vamos Conversar?</h2>
+            <form class="contato-form" action="#" method="POST">
+                <div class="form-group">
+                    <label for="nome">Seu Nome</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Seu E-mail Corporativo</label>
+                    <input type="email" id="email" name="email" placeholder="nome@exemplo.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="mensagem">Sua Mensagem</label>
+                    <textarea id="mensagem" name="mensagem" placeholder="Fale um pouco sobre o seu projeto brilhante..." required></textarea>
+                </div>
+                
+                <button type="submit" class="btn">Enviar Mensagem</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2026 MeuSite. Desenhado visando acessibilidade e estética com HTML5 e CSS3 Vanilla.</p>
+    </footer>
+
+</body>
+</html>
